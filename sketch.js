@@ -49,20 +49,23 @@ function draw () {
 
       stroke(pix);
       strokeWeight(height/500);
-      console.log(pix[0])
+      console.log(mask[0])
       if(pix[0] > 100){
         line(x, y, x + width/100, y)
-        line(x + 100, y + 100, x + width/100 + 100, y + 100)
+        // line(x + 100, y + 100, x + width/100 + 100, y + 100)
       } else{
         line(x, y, x - width/100, y)
-        line(x + 100, y + 100, x - width/100 + 100, y + 100)
+        // line(x + 100, y + 100, x - width/100 + 100, y + 100)
       }
+     } else{ 
+      noStroke();
+      rect(x, y, 5 , 5);
     }
 
   }
-  updatePixels();
-  renderCounter = renderCounter + 1;
-  if(renderCounter > 1080) {
+  // updatePixels();
+  renderCounter = renderCounter +1 
+  if(renderCounter > 100) {
     console.log("Done!")
     noLoop();
     // uncomment this to save the result
